@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=mayfair_api
+POSTGRES_USER=ZYpxkBrSPWSdskayIpAIvoIqgMYeVABy
+POSTGRES_PASSWORD=tGXvsNmgLUkDiOZkYEvoATqav9yuqSoDMfiLhgFv4qAttc3CJdTFHFZSFJChsREA

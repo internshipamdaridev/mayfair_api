@@ -1,0 +1,18 @@
+# General
+# ------------------------------------------------------------------------------
+USE_DOCKER=yes
+IPYTHONDIR=/app/.ipython
+# Redis
+# ------------------------------------------------------------------------------
+REDIS_URL=redis://redis:6379/0
+
+# Celery
+# ------------------------------------------------------------------------------
+
+# Flower
+CELERY_FLOWER_USER=TiYmRMlQaLYmyXgebFOOQTPMzcbldwZN
+CELERY_FLOWER_PASSWORD=2sNP1IlFOQgdcGXIaVR4DzgSGYgbH1Ag6b3UyIGAhAczcjelEUHBOhDDcGo3Xfnb
+
+#Paystack
+PAYSTACK_SECRET_KEY=sk_test_38f4734ca85783eb486bb4bfb30c71f352c154cd
+PAYSTACK_PUBLIC_KEY=pk_test_45131b55711feeb8832c8d1ac30a86e6738123b7
