@@ -5,6 +5,64 @@ Mayfair API
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
+# Running the Stack
+
+## Starting Services
+
+### Basic Startup
+This brings up both Django and PostgreSQL. The first time it is run it might take a while to get started, but subsequent runs will occur quickly.
+
+Open a terminal at the project root and run the following for local development:
+```bash
+$ docker compose -f docker-compose.local.yml up
+```
+
+### Alternative Startup Methods
+
+#### Set Environment Variable
+You can also set the environment variable COMPOSE_FILE pointing to docker-compose.local.yml like this:
+```bash
+$ export COMPOSE_FILE=docker-compose.local.yml
+```
+And then run:
+```bash
+$ docker compose up
+```
+
+#### Detached (Background) Mode
+To run in a detached mode:
+```bash
+$ docker compose up -d
+```
+
+### Running Documentation Service
+
+#### Docs Service Only
+To run the docs service:
+```bash
+$ docker compose -f docker-compose.docs.yml up
+```
+
+#### Docs with Local Services
+To run the docs with local services:
+```bash
+$ docker compose -f docker-compose.local.yml -f docker-compose.docs.yml up
+```
+
+## Accessing the Site
+- If you selected Webpack or Gulp as frontend pipeline: The site is accessible at http://localhost:3000
+- Otherwise: The site is accessible at http://localhost:8000
+
+## Executing Management Commands
+
+To run management commands in the container, use:
+```bash
+$ docker compose -f docker-compose.local.yml run --rm django python manage.py migrate
+$ docker compose -f docker-compose.local.yml run --rm django python manage.py createsuperuser
+```
+
+**Note:** The `--rm` flag ensures the container is removed after the command is executed.
+
 ## Settings
 
 Moved to [settings](https://cookiecutter-django.readthedocs.io/en/latest/1-getting-started/settings.html).
